@@ -1,4 +1,4 @@
-scheme_code,stock_name,weight_pct,sector,as_of_date
+scheme_code,stock,weight_pct,sector,as_of
 125497,HDFC Bank,3.81,FMCG,31-12-2024
 125497,ICICI Bank,1.1,Banking,31-12-2024
 125497,Wipro,12.87,Auto,31-12-2024

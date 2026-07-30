@@ -1,4 +1,4 @@
-scheme_code,return_1m,return_3m,return_6m,return_1y,return_3y,return_5y,return_since_inception,as_of_date
+scheme_code,ret_1m,ret_3m,ret_6m,ret_1y,ret_3y,ret_5y,ret_inception,as_of
 125497,1.25,-0.93,3.21,4.25,16.95,10.93,10.56,31-12-2024
 119551,1.6,2.29,13.9,9.78,12.75,23.15,9.39,31-12-2024
 120503,1.78,2.92,7.17,21.21,5.62,10.42,15.73,31-12-2024

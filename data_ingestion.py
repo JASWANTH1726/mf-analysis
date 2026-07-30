@@ -2,90 +2,60 @@ import os
 import glob
 import pandas as pd
 
-RAW_DIR = os.path.join(os.path.dirname(__file__), "data", "raw")
+raw = os.path.join(os.path.dirname(__file__), "data", "raw")
 
 
-def load_all_csvs(directory=RAW_DIR):
-    files = sorted(glob.glob(os.path.join(directory, "*.csv")))
-    if not files:
-        print(f"no CSVs found in {directory}")
-        return {}
-
+def load_csvs(path=raw):
     datasets = {}
-    for path in files:
-        name = os.path.splitext(os.path.basename(path))[0]
-        df = pd.read_csv(path)
+    for f in sorted(glob.glob(os.path.join(path, "*.csv"))):
+        name = os.path.splitext(os.path.basename(f))[0]
+        df = pd.read_csv(f)
         datasets[name] = df
 
-        print(f"\n{'='*55}")
-        print(f"  {name}")
-        print(f"  shape : {df.shape}")
-        print(f"  dtypes:\n{df.dtypes.to_string()}")
-        print(f"  head  :\n{df.head().to_string()}")
+        print(f"\n{name}")
+        print(df.shape)
+        print(df.dtypes)
+        print(df.head())
 
-        nulls = df.isnull().sum()
-        nulls = nulls[nulls > 0]
-        if not nulls.empty:
-            print(f"  [!] nulls:\n{nulls.to_string()}")
+        bad = df.isnull().sum()
+        bad = bad[bad > 0]
+        if not bad.empty:
+            print("nulls:", bad.to_dict())
+        if df.duplicated().sum():
+            print("dupes:", df.duplicated().sum())
 
-        dups = df.duplicated().sum()
-        if dups:
-            print(f"  [!] {dups} duplicate rows")
-
-    print(f"\nloaded {len(datasets)} datasets")
     return datasets
 
 
-def explore_fund_master(datasets):
-    fm = datasets.get("fund_master")
-    if fm is None:
-        print("fund_master not found")
-        return
-
-    print("\n--- fund_master exploration ---")
+def explore_fund_master(df):
     for col in ["fund_house", "category", "sub_category", "risk_grade"]:
-        if col in fm.columns:
-            vals = fm[col].unique()
-            print(f"\n{col} ({len(vals)} unique): {vals}")
+        print(f"\n{col}: {df[col].nunique()} unique")
+        print(df[col].value_counts())
 
-    # AMFI scheme codes are 6-digit numeric IDs — each scheme variant
-    # (direct/regular, growth/dividend) gets its own unique code
-    if "scheme_code" in fm.columns:
-        print(f"\nscheme_code range: {fm['scheme_code'].min()} - {fm['scheme_code'].max()}")
-        print(f"sample codes: {fm['scheme_code'].head(5).tolist()}")
+    # scheme_code is a 6-digit AMFI-assigned ID, unique per scheme variant
+    # direct growth, regular growth, IDCW etc all get separate codes
+    print("\ncode range:", df["scheme_code"].min(), "to", df["scheme_code"].max())
 
 
-def validate_amfi_codes(datasets):
-    fm  = datasets.get("fund_master")
-    nav = datasets.get("nav_history")
+def check_amfi_coverage(master, nav):
+    m = set(master["scheme_code"].astype(str))
+    n = set(nav["scheme_code"].astype(str))
 
-    if fm is None or nav is None:
-        print("need fund_master + nav_history for validation")
-        return
-
-    master_codes = set(fm["scheme_code"].dropna().astype(str))
-    nav_codes    = set(nav["scheme_code"].dropna().astype(str))
-
-    missing  = master_codes - nav_codes
-    extra    = nav_codes - master_codes
-    coverage = round((len(master_codes) - len(missing)) / len(master_codes) * 100, 1)
-
-    print("\n--- data quality summary ---")
-    print(f"fund_master codes          : {len(master_codes)}")
-    print(f"nav_history unique codes   : {len(nav_codes)}")
-    print(f"missing from nav_history   : {len(missing)}")
+    missing = m - n
+    print(f"\nmaster: {len(m)} codes, nav_history: {len(n)} codes")
+    print(f"missing from nav: {len(missing)}")
     if missing:
-        print(f"  e.g. {sorted(missing)[:5]}")
-    print(f"extra in nav, not in master: {len(extra)}")
-    print(f"amfi code coverage         : {coverage}%")
-
-    if coverage == 100.0:
-        print("all master codes have NAV history — data looks clean")
-    else:
-        print(f"[!] {len(missing)} codes lack NAV history — investigate before analysis")
+        print("sample:", list(missing)[:5])
+    print(f"coverage: {round(len(m - missing) / len(m) * 100, 1)}%")
 
 
 if __name__ == "__main__":
-    datasets = load_all_csvs()
-    explore_fund_master(datasets)
-    validate_amfi_codes(datasets)
+    data = load_csvs()
+
+    if "fund_master" in data:
+        explore_fund_master(data["fund_master"])
+
+    if "fund_master" in data and "nav_history" in data:
+        check_amfi_coverage(data["fund_master"], data["nav_history"])
+    else:
+        print("fund_master or nav_history not found, skipping coverage check")

@@ -1,4 +1,4 @@
-scheme_code,scheme_name,fund_house,category,sub_category,risk_grade,scheme_type,launch_date,benchmark,exit_load_pct,min_sip_amount
+scheme_code,scheme_name,fund_house,category,sub_category,risk_grade,scheme_type,launch_date,benchmark,exit_load_pct,min_sip
 125497,HDFC Mutual Fund Large Cap Fund Direct Growth,HDFC Mutual Fund,Equity,Large Cap,Low,Open Ended,01-01-2010,Nifty 50,0.0,1000
 119551,SBI Mutual Fund Mid Cap Fund Direct Growth,SBI Mutual Fund,Debt,Mid Cap,Moderate,Close Ended,30-06-2010,Nifty 100,1.0,1000
 120503,ICICI Prudential Small Cap Fund Direct Growth,ICICI Prudential,Hybrid,Small Cap,Moderately High,Interval,27-12-2010,BSE 500,0.5,500

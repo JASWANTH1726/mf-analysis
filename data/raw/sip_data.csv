@@ -1,4 +1,4 @@
-scheme_code,sip_date,sip_amount,units_allotted,nav_on_date
+scheme_code,date,amount,units,nav
 125497,01-01-2020,500,35.6477,70.0845
 125497,01-02-2020,1000,34.0148,150.4707
 125497,01-03-2020,2000,26.8249,280.3451

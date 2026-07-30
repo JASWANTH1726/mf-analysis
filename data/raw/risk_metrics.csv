@@ -1,4 +1,4 @@
-scheme_code,std_dev,beta,sharpe_ratio,alpha,r_squared,sortino_ratio,as_of_date
+scheme_code,std_dev,beta,sharpe,alpha,r_squared,sortino,as_of
 125497,15.387,1.293,2.48,-1.752,0.977,2.273,31-12-2024
 119551,5.699,0.799,0.403,0.446,0.759,1.036,31-12-2024
 120503,16.777,0.645,1.581,2.82,0.761,1.519,31-12-2024
