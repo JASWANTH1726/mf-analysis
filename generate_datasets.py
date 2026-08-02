@@ -152,4 +152,54 @@ pd.DataFrame({
     "as_of":        "31-12-2024",
 }).to_csv(os.path.join(raw, "risk_metrics.csv"), index=False)
 
+# investor_transactions
+states = ["Maharashtra", "Karnataka", "Tamil Nadu", "Delhi", "Gujarat",
+          "West Bengal", "Rajasthan", "Telangana", "Uttar Pradesh", "Kerala"]
+tx_types = ["SIP", "Lumpsum", "Redemption", "SIP", "Lumpsum"]  # weighted toward SIP
+kyc = ["KYC_VERIFIED", "KYC_PENDING", "KYC_REJECTED"]
+rows = []
+for i in range(2000):
+    code = rng.choice(codes)
+    rows.append({
+        "txn_id":       f"TXN{100000+i}",
+        "scheme_code":  code,
+        "txn_date":     pd.Timestamp(rng.choice(pd.date_range("2020-01-01", "2024-12-31", freq="B").values)).strftime("%d-%m-%Y"),
+        "txn_type":     rng.choice(tx_types),
+        "amount":       round(float(rng.choice([500, 1000, 2000, 5000, 10000, 25000, 50000])), 2),
+        "units":        round(rng.uniform(1, 200), 4),
+        "nav":          round(rng.uniform(10, 500), 4),
+        "investor_id":  f"INV{rng.integers(1000, 9999)}",
+        "state":        rng.choice(states),
+        "kyc_status":   rng.choice(kyc, p=[0.85, 0.12, 0.03]),
+        "folio_no":     f"FOLIO{rng.integers(100000, 999999)}",
+    })
+# inject some dirty data for cleaning exercise
+rows[5]["txn_type"]  = "sip"          # lowercase
+rows[10]["txn_type"] = "LUMP SUM"     # wrong format
+rows[15]["amount"]   = -500           # negative amount
+rows[20]["txn_date"] = "2024/06/15"   # wrong date format
+rows[25]["kyc_status"] = "verified"   # non-standard
+pd.DataFrame(rows).to_csv(os.path.join(raw, "investor_transactions.csv"), index=False)
+
+# scheme_performance
+perf_rows = []
+for code in codes:
+    for qtr in pd.date_range("2020-01-01", "2024-12-31", freq="QS"):
+        perf_rows.append({
+            "scheme_code":   code,
+            "period":        qtr.strftime("%b-%Y"),
+            "ret_1m":        round(rng.normal(1.2, 3.0), 2),
+            "ret_3m":        round(rng.normal(3.5, 5.0), 2),
+            "ret_6m":        round(rng.normal(7.0, 7.0), 2),
+            "ret_1y":        round(rng.normal(14.0, 9.0), 2),
+            "expense_ratio": round(rng.uniform(0.1, 2.5), 3),
+            "benchmark_ret": round(rng.normal(12.0, 6.0), 2),
+            "alpha":         round(rng.normal(1.5, 2.5), 3),
+        })
+# inject anomalies
+perf_rows[3]["ret_1y"]        = 999.0   # outlier
+perf_rows[7]["expense_ratio"] = 5.5     # out of range
+perf_rows[12]["ret_3m"]       = "N/A"   # non-numeric
+pd.DataFrame(perf_rows).to_csv(os.path.join(raw, "scheme_performance.csv"), index=False)
+
 print("done")
