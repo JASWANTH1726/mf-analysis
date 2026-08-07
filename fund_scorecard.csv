@@ -1,21 +1,41 @@
 ,scheme_code,scheme_name,score,cagr_3y,sharpe,alpha_annual,direct_ter,max_dd
-1,119092,Axis Mutual Fund ELSS Fund Direct Growth,64.5,2.65,-0.9705457566978494,12.3708,0.187,-14.38
-2,118989,Mirae Asset Short Duration Fund Direct Growth,62.5,7.08,-0.9623405030313767,10.7922,0.628,-18.5
-3,118712,Kotak Mahindra Balanced Advantage Fund Direct Growth,61.25,0.24,-1.4094136001441295,0.4943,0.153,-19.24
-4,120841,Kotak Mahindra Liquid Fund Direct Growth,61.25,4.64,-0.701240493888619,22.8821,0.293,-7.63
-5,120594,DSP Mutual Fund Balanced Advantage Fund Direct Growth,58.75,1.33,-1.093119658115682,9.0336,0.213,-17.28
-6,120712,UTI Mutual Fund Flexi Cap Fund Direct Growth,58.5,3.09,-1.030705951707523,12.1606,0.706,-18.98
-7,119775,Franklin Templeton Large Cap Fund Direct Growth,57.5,0.98,-1.1307062741758838,7.3834,0.191,-11.63
-8,119551,SBI Mutual Fund Mid Cap Fund Direct Growth,57.5,3.34,-1.3564402012371455,-2.1583,0.821,-17.76
-9,120503,ICICI Prudential Small Cap Fund Direct Growth,57.0,0.94,-1.0463861041617357,12.0538,0.199,-12.32
-10,118551,ICICI Prudential ELSS Fund Direct Growth,56.0,5.31,-0.6767791842294361,20.4454,0.417,-7.41
-11,125497,HDFC Mutual Fund Large Cap Fund Direct Growth,55.0,1.95,-1.1375070035350647,7.8904,0.387,-9.45
-12,120333,Mirae Asset Large Cap Fund Direct Growth,51.5,3.99,-0.7881225742707395,20.7908,0.906,-8.77
-13,118890,Franklin Templeton Small Cap Fund Direct Growth,51.0,-1.63,-1.4774145912852203,-4.7458,0.368,-28.75
-14,120465,HDFC Mutual Fund Small Cap Fund Direct Growth,47.25,-0.55,-0.8826255835089432,16.1882,0.206,-9.48
-15,118632,Nippon India Flexi Cap Fund Direct Growth,46.5,-3.83,-1.9251394803455253,-17.8093,0.371,-37.99
-16,118825,UTI Mutual Fund Mid Cap Fund Direct Growth,45.75,-0.67,-1.42396814198912,-2.2541,0.843,-20.91
-17,120178,Nippon India Liquid Fund Direct Growth,43.0,0.39,-1.286964972445562,2.0726,0.907,-11.58
-18,119203,Axis Mutual Fund Short Duration Fund Direct Growth,42.75,-3.76,-1.1530487723002854,8.283,0.737,-20.12
-19,119386,SBI Mutual Fund Flexi Cap Fund Direct Growth,37.0,-1.57,-0.5889030787871452,25.3178,0.647,-10.05
-20,119644,DSP Mutual Fund Mid Cap Fund Direct Growth,35.5,-2.45,-1.0952179639795818,5.477,0.473,-11.48
+1,118989,Mirae Asset Short Duration Fund Direct Growth,70.06,4.43,-0.9932300730911332,13.5301,0.221,-18.5
+2,121003,ICICI Prudential Short Duration Fund Direct Growth,65.31,3.89,-1.4305045591635326,-7.2555,0.498,-34.5
+3,118712,Edelweiss Balanced Advantage Fund Direct Growth,64.38,3.24,-1.4466481382572431,-0.2497,0.464,-19.24
+4,121005,Axis Mutual Fund Large Cap Fund Direct Growth,64.12,1.59,-1.5160034618133258,1.6892,0.146,-17.43
+5,120841,Kotak Mahindra Liquid Fund Direct Growth,62.38,4.15,-0.7742493306379096,22.4755,0.121,-7.63
+6,119551,SBI Mutual Fund Mid Cap Fund Direct Growth,62.25,2.44,-1.3350462134031567,-0.1582,0.2,-15.96
+7,121020,Quantum Mutual Fund Balanced Advantage Fund Direct Growth,61.38,7.76,0.002101096552508974,44.3038,0.458,-6.6
+8,121002,SBI Mutual Fund Liquid Fund Direct Growth,59.25,6.79,-0.8266151479796094,17.7854,0.71,-12.65
+9,120594,DSP Mutual Fund Balanced Advantage Fund Direct Growth,59.25,2.24,-1.1355240575936032,6.4324,0.364,-17.28
+10,121009,Franklin Templeton ELSS Fund Direct Growth,58.75,5.15,-1.156161982594659,6.4956,0.929,-16.04
+11,121007,Mirae Asset Small Cap Fund Direct Growth,58.12,5.18,-1.0584410649693652,9.9068,0.82,-15.9
+12,120333,Motilal Oswal Large Cap Fund Direct Growth,57.5,4.34,-0.7113868330759026,21.5443,0.486,-8.77
+13,120712,Quantum Mutual Fund Flexi Cap Fund Direct Growth,56.25,0.76,-1.0641737311244635,11.2679,0.289,-18.98
+14,121014,PGIM India Mid Cap Fund Direct Growth,54.06,7.74,-0.41029427367943727,29.5872,0.921,-9.76
+15,118890,L&T Mutual Fund Small Cap Fund Direct Growth,54.0,-0.41,-1.6144673585770104,-9.8398,0.437,-29.13
+16,121018,Sundaram Liquid Fund Direct Growth,53.75,3.53,-0.541129015465844,27.9277,0.509,-9.53
+17,119092,Axis Mutual Fund ELSS Fund Direct Growth,52.87,3.95,-0.8858462644349537,10.3479,0.718,-14.39
+18,119203,Invesco India Short Duration Fund Direct Growth,52.25,-1.78,-1.134492950321446,10.224,0.315,-21.01
+19,121001,HDFC Mutual Fund ELSS Fund Direct Growth,52.12,2.73,-1.2776158040772243,4.4124,0.7,-11.38
+20,121012,Aditya Birla Balanced Advantage Fund Direct Growth,51.62,1.72,-1.097777400092634,6.5509,0.513,-14.37
+21,121013,Canara Robeco Large Cap Fund Direct Growth,51.0,1.35,-0.9510119085081165,14.0852,0.256,-11.08
+22,118551,Canara Robeco ELSS Fund Direct Growth,50.87,6.87,-0.6410301767938292,22.7969,0.936,-7.41
+23,121016,Edelweiss Flexi Cap Fund Direct Growth,49.0,3.16,-0.6480073417055402,22.643,0.919,-13.36
+24,120178,PGIM India Liquid Fund Direct Growth,48.37,2.74,-1.2726903743751188,0.4949,0.827,-11.37
+25,121017,Motilal Oswal ELSS Fund Direct Growth,48.06,-1.74,-1.2294247766063466,6.8807,0.656,-20.69
+26,125497,HDFC Mutual Fund Large Cap Fund Direct Growth,47.94,1.48,-1.1783531630739654,4.7714,0.498,-9.45
+27,121008,DSP Mutual Fund Flexi Cap Fund Direct Growth,47.87,3.01,-0.591398266819734,24.2086,0.632,-7.04
+28,119775,Franklin Templeton Large Cap Fund Direct Growth,45.62,1.9,-1.074129691827511,9.0374,0.906,-11.63
+29,121004,Nippon India Balanced Advantage Fund Direct Growth,45.13,-0.16,-1.1584885364128537,5.8651,0.538,-12.5
+30,121006,Kotak Mahindra Mid Cap Fund Direct Growth,45.12,-1.28,-1.102350135083822,6.1886,0.51,-19.88
+31,120503,ICICI Prudential Small Cap Fund Direct Growth,44.0,-1.7,-1.0607763981834033,9.5615,0.413,-12.32
+32,121019,L&T Mutual Fund Short Duration Fund Direct Growth,43.94,-0.77,-0.8466635246639251,14.5106,0.221,-8.27
+33,121015,Invesco India Small Cap Fund Direct Growth,41.37,1.5,-0.7948554531175082,17.983,0.693,-7.48
+34,119644,Sundaram Mid Cap Fund Direct Growth,41.12,0.24,-1.0710917321578644,6.2618,0.629,-11.48
+35,119386,Aditya Birla Flexi Cap Fund Direct Growth,40.88,-2.82,-0.5430157262805662,27.3022,0.237,-11.92
+36,118632,Nippon India Flexi Cap Fund Direct Growth,39.81,-2.32,-1.9767735330398637,-18.7393,0.921,-37.99
+37,118825,UTI Mutual Fund Mid Cap Fund Direct Growth,39.12,-2.93,-1.508311800853253,-7.7162,0.772,-23.49
+38,121011,Tata Mutual Fund Short Duration Fund Direct Growth,38.62,0.73,-1.0475493871062773,12.4807,0.8,-8.08
+39,120465,Tata Mutual Fund Small Cap Fund Direct Growth,37.19,-2.03,-0.8865107082428579,20.2691,0.656,-10.84
+40,121010,UTI Mutual Fund Liquid Fund Direct Growth,35.25,-3.28,-0.9333310514681689,16.5158,0.745,-16.58

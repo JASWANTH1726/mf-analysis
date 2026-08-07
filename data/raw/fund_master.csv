@@ -1,21 +1,41 @@
 scheme_code,scheme_name,fund_house,category,sub_category,risk_grade,scheme_type,launch_date,benchmark,exit_load_pct,min_sip
-125497,HDFC Mutual Fund Large Cap Fund Direct Growth,HDFC Mutual Fund,Equity,Large Cap,Low,Open Ended,01-01-2010,Nifty 50,0.0,1000
-119551,SBI Mutual Fund Mid Cap Fund Direct Growth,SBI Mutual Fund,Debt,Mid Cap,Moderate,Close Ended,30-06-2010,Nifty 100,1.0,1000
-120503,ICICI Prudential Small Cap Fund Direct Growth,ICICI Prudential,Hybrid,Small Cap,Moderately High,Interval,27-12-2010,BSE 500,0.5,500
-118632,Nippon India Flexi Cap Fund Direct Growth,Nippon India,Solution Oriented,Flexi Cap,High,Open Ended,25-06-2011,Nifty Midcap 150,0.5,5000
-119092,Axis Mutual Fund ELSS Fund Direct Growth,Axis Mutual Fund,Other,ELSS,Very High,Close Ended,22-12-2011,Nifty Smallcap 250,0.5,5000
-120841,Kotak Mahindra Liquid Fund Direct Growth,Kotak Mahindra,Equity,Liquid,Low,Interval,19-06-2012,Nifty 50,1.0,1000
-118989,Mirae Asset Short Duration Fund Direct Growth,Mirae Asset,Debt,Short Duration,Moderate,Open Ended,16-12-2012,Nifty 100,0.0,1000
-120594,DSP Mutual Fund Balanced Advantage Fund Direct Growth,DSP Mutual Fund,Hybrid,Balanced Advantage,Moderately High,Close Ended,14-06-2013,BSE 500,1.0,5000
-119775,Franklin Templeton Large Cap Fund Direct Growth,Franklin Templeton,Solution Oriented,Large Cap,High,Interval,11-12-2013,Nifty Midcap 150,0.0,1000
-118825,UTI Mutual Fund Mid Cap Fund Direct Growth,UTI Mutual Fund,Other,Mid Cap,Very High,Open Ended,09-06-2014,Nifty Smallcap 250,0.0,1000
-120465,HDFC Mutual Fund Small Cap Fund Direct Growth,HDFC Mutual Fund,Equity,Small Cap,Low,Close Ended,06-12-2014,Nifty 50,0.5,1000
-119386,SBI Mutual Fund Flexi Cap Fund Direct Growth,SBI Mutual Fund,Debt,Flexi Cap,Moderate,Interval,04-06-2015,Nifty 100,1.0,500
-118551,ICICI Prudential ELSS Fund Direct Growth,ICICI Prudential,Hybrid,ELSS,Moderately High,Open Ended,01-12-2015,BSE 500,1.0,500
-120178,Nippon India Liquid Fund Direct Growth,Nippon India,Solution Oriented,Liquid,High,Close Ended,29-05-2016,Nifty Midcap 150,1.0,1000
-119203,Axis Mutual Fund Short Duration Fund Direct Growth,Axis Mutual Fund,Other,Short Duration,Very High,Interval,25-11-2016,Nifty Smallcap 250,1.0,5000
-118712,Kotak Mahindra Balanced Advantage Fund Direct Growth,Kotak Mahindra,Equity,Balanced Advantage,Low,Open Ended,24-05-2017,Nifty 50,1.0,500
-120333,Mirae Asset Large Cap Fund Direct Growth,Mirae Asset,Debt,Large Cap,Moderate,Close Ended,20-11-2017,Nifty 100,0.5,5000
-119644,DSP Mutual Fund Mid Cap Fund Direct Growth,DSP Mutual Fund,Hybrid,Mid Cap,Moderately High,Interval,19-05-2018,BSE 500,0.0,5000
-118890,Franklin Templeton Small Cap Fund Direct Growth,Franklin Templeton,Solution Oriented,Small Cap,High,Open Ended,15-11-2018,Nifty Midcap 150,1.0,500
-120712,UTI Mutual Fund Flexi Cap Fund Direct Growth,UTI Mutual Fund,Other,Flexi Cap,Very High,Close Ended,14-05-2019,Nifty Smallcap 250,0.5,1000
+125497,HDFC Mutual Fund Large Cap Fund Direct Growth,HDFC Mutual Fund,Equity,Large Cap,Low,Open Ended,01-01-2010,Nifty 50,0.0,500
+119551,SBI Mutual Fund Mid Cap Fund Direct Growth,SBI Mutual Fund,Debt,Mid Cap,Moderate,Close Ended,01-04-2010,Nifty 100,1.0,5000
+120503,ICICI Prudential Small Cap Fund Direct Growth,ICICI Prudential,Hybrid,Small Cap,Moderately High,Interval,30-06-2010,BSE 500,0.5,5000
+118632,Nippon India Flexi Cap Fund Direct Growth,Nippon India,Solution Oriented,Flexi Cap,High,Open Ended,28-09-2010,Nifty Midcap 150,0.5,1000
+119092,Axis Mutual Fund ELSS Fund Direct Growth,Axis Mutual Fund,Other,ELSS,Very High,Close Ended,27-12-2010,Nifty Smallcap 250,0.5,500
+120841,Kotak Mahindra Liquid Fund Direct Growth,Kotak Mahindra,Equity,Liquid,Low,Interval,27-03-2011,Nifty 50,1.0,5000
+118989,Mirae Asset Short Duration Fund Direct Growth,Mirae Asset,Debt,Short Duration,Moderate,Open Ended,25-06-2011,Nifty 100,0.0,1000
+120594,DSP Mutual Fund Balanced Advantage Fund Direct Growth,DSP Mutual Fund,Hybrid,Balanced Advantage,Moderately High,Close Ended,23-09-2011,BSE 500,1.0,5000
+119775,Franklin Templeton Large Cap Fund Direct Growth,Franklin Templeton,Solution Oriented,Large Cap,High,Interval,22-12-2011,Nifty Midcap 150,0.0,5000
+118825,UTI Mutual Fund Mid Cap Fund Direct Growth,UTI Mutual Fund,Other,Mid Cap,Very High,Open Ended,21-03-2012,Nifty Smallcap 250,0.0,5000
+120465,Tata Mutual Fund Small Cap Fund Direct Growth,Tata Mutual Fund,Equity,Small Cap,Low,Close Ended,19-06-2012,Nifty 50,0.5,5000
+119386,Aditya Birla Flexi Cap Fund Direct Growth,Aditya Birla,Debt,Flexi Cap,Moderate,Interval,17-09-2012,Nifty 100,1.0,500
+118551,Canara Robeco ELSS Fund Direct Growth,Canara Robeco,Hybrid,ELSS,Moderately High,Open Ended,16-12-2012,BSE 500,1.0,1000
+120178,PGIM India Liquid Fund Direct Growth,PGIM India,Solution Oriented,Liquid,High,Close Ended,16-03-2013,Nifty Midcap 150,1.0,1000
+119203,Invesco India Short Duration Fund Direct Growth,Invesco India,Other,Short Duration,Very High,Interval,14-06-2013,Nifty Smallcap 250,1.0,1000
+118712,Edelweiss Balanced Advantage Fund Direct Growth,Edelweiss,Equity,Balanced Advantage,Low,Open Ended,12-09-2013,Nifty 50,1.0,500
+120333,Motilal Oswal Large Cap Fund Direct Growth,Motilal Oswal,Debt,Large Cap,Moderate,Close Ended,11-12-2013,Nifty 100,0.5,1000
+119644,Sundaram Mid Cap Fund Direct Growth,Sundaram,Hybrid,Mid Cap,Moderately High,Interval,11-03-2014,BSE 500,0.0,500
+118890,L&T Mutual Fund Small Cap Fund Direct Growth,L&T Mutual Fund,Solution Oriented,Small Cap,High,Open Ended,09-06-2014,Nifty Midcap 150,1.0,5000
+120712,Quantum Mutual Fund Flexi Cap Fund Direct Growth,Quantum Mutual Fund,Other,Flexi Cap,Very High,Close Ended,07-09-2014,Nifty Smallcap 250,0.5,5000
+121001,HDFC Mutual Fund ELSS Fund Direct Growth,HDFC Mutual Fund,Equity,ELSS,Low,Interval,06-12-2014,Nifty 50,0.5,5000
+121002,SBI Mutual Fund Liquid Fund Direct Growth,SBI Mutual Fund,Debt,Liquid,Moderate,Open Ended,06-03-2015,Nifty 100,0.5,5000
+121003,ICICI Prudential Short Duration Fund Direct Growth,ICICI Prudential,Hybrid,Short Duration,Moderately High,Close Ended,04-06-2015,BSE 500,0.0,1000
+121004,Nippon India Balanced Advantage Fund Direct Growth,Nippon India,Solution Oriented,Balanced Advantage,High,Interval,02-09-2015,Nifty Midcap 150,1.0,5000
+121005,Axis Mutual Fund Large Cap Fund Direct Growth,Axis Mutual Fund,Other,Large Cap,Very High,Open Ended,01-12-2015,Nifty Smallcap 250,1.0,1000
+121006,Kotak Mahindra Mid Cap Fund Direct Growth,Kotak Mahindra,Equity,Mid Cap,Low,Close Ended,29-02-2016,Nifty 50,0.5,500
+121007,Mirae Asset Small Cap Fund Direct Growth,Mirae Asset,Debt,Small Cap,Moderate,Interval,29-05-2016,Nifty 100,0.5,5000
+121008,DSP Mutual Fund Flexi Cap Fund Direct Growth,DSP Mutual Fund,Hybrid,Flexi Cap,Moderately High,Open Ended,27-08-2016,BSE 500,1.0,1000
+121009,Franklin Templeton ELSS Fund Direct Growth,Franklin Templeton,Solution Oriented,ELSS,High,Close Ended,25-11-2016,Nifty Midcap 150,0.5,500
+121010,UTI Mutual Fund Liquid Fund Direct Growth,UTI Mutual Fund,Other,Liquid,Very High,Interval,23-02-2017,Nifty Smallcap 250,0.5,1000
+121011,Tata Mutual Fund Short Duration Fund Direct Growth,Tata Mutual Fund,Equity,Short Duration,Low,Open Ended,24-05-2017,Nifty 50,0.5,5000
+121012,Aditya Birla Balanced Advantage Fund Direct Growth,Aditya Birla,Debt,Balanced Advantage,Moderate,Close Ended,22-08-2017,Nifty 100,0.0,500
+121013,Canara Robeco Large Cap Fund Direct Growth,Canara Robeco,Hybrid,Large Cap,Moderately High,Interval,20-11-2017,BSE 500,0.0,1000
+121014,PGIM India Mid Cap Fund Direct Growth,PGIM India,Solution Oriented,Mid Cap,High,Open Ended,18-02-2018,Nifty Midcap 150,0.5,500
+121015,Invesco India Small Cap Fund Direct Growth,Invesco India,Other,Small Cap,Very High,Close Ended,19-05-2018,Nifty Smallcap 250,1.0,5000
+121016,Edelweiss Flexi Cap Fund Direct Growth,Edelweiss,Equity,Flexi Cap,Low,Interval,17-08-2018,Nifty 50,0.0,1000
+121017,Motilal Oswal ELSS Fund Direct Growth,Motilal Oswal,Debt,ELSS,Moderate,Open Ended,15-11-2018,Nifty 100,1.0,500
+121018,Sundaram Liquid Fund Direct Growth,Sundaram,Hybrid,Liquid,Moderately High,Close Ended,13-02-2019,BSE 500,1.0,500
+121019,L&T Mutual Fund Short Duration Fund Direct Growth,L&T Mutual Fund,Solution Oriented,Short Duration,High,Interval,14-05-2019,Nifty Midcap 150,0.0,1000
+121020,Quantum Mutual Fund Balanced Advantage Fund Direct Growth,Quantum Mutual Fund,Other,Balanced Advantage,Very High,Open Ended,12-08-2019,Nifty Smallcap 250,0.5,5000

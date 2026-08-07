@@ -1,21 +1,41 @@
 scheme_code,scheme_name,beta,alpha_annual,r_squared
-119386,SBI Mutual Fund Flexi Cap Fund Direct Growth,-0.0004,25.3178,0.0004
-120841,Kotak Mahindra Liquid Fund Direct Growth,-0.0007,22.8821,0.0015
-120333,Mirae Asset Large Cap Fund Direct Growth,-0.0003,20.7908,0.0004
-118551,ICICI Prudential ELSS Fund Direct Growth,0.0006,20.4454,0.0012
-120465,HDFC Mutual Fund Small Cap Fund Direct Growth,-0.0,16.1882,0.0
-119092,Axis Mutual Fund ELSS Fund Direct Growth,-0.0001,12.3708,0.0
-120712,UTI Mutual Fund Flexi Cap Fund Direct Growth,-0.001,12.1606,0.0032
-120503,ICICI Prudential Small Cap Fund Direct Growth,-0.0012,12.0538,0.0049
-118989,Mirae Asset Short Duration Fund Direct Growth,0.0016,10.7922,0.0102
-120594,DSP Mutual Fund Balanced Advantage Fund Direct Growth,0.0,9.0336,0.0
-119203,Axis Mutual Fund Short Duration Fund Direct Growth,-0.0,8.283,0.0
-125497,HDFC Mutual Fund Large Cap Fund Direct Growth,0.0001,7.8904,0.0001
-119775,Franklin Templeton Large Cap Fund Direct Growth,0.0003,7.3834,0.0002
-119644,DSP Mutual Fund Mid Cap Fund Direct Growth,0.0005,5.477,0.0007
-120178,Nippon India Liquid Fund Direct Growth,-0.0001,2.0726,0.0
-118712,Kotak Mahindra Balanced Advantage Fund Direct Growth,-0.0007,0.4943,0.0019
-119551,SBI Mutual Fund Mid Cap Fund Direct Growth,0.0009,-2.1583,0.0025
-118825,UTI Mutual Fund Mid Cap Fund Direct Growth,-0.0002,-2.2541,0.0002
-118890,Franklin Templeton Small Cap Fund Direct Growth,-0.0004,-4.7458,0.0007
-118632,Nippon India Flexi Cap Fund Direct Growth,-0.0005,-17.8093,0.0009
+121020,Quantum Mutual Fund Balanced Advantage Fund Direct Growth,0.0006,44.3038,0.001
+121014,PGIM India Mid Cap Fund Direct Growth,0.0007,29.5872,0.0017
+121018,Sundaram Liquid Fund Direct Growth,-0.0004,27.9277,0.0006
+119386,Aditya Birla Flexi Cap Fund Direct Growth,-0.0006,27.3022,0.0009
+121008,DSP Mutual Fund Flexi Cap Fund Direct Growth,0.0005,24.2086,0.0008
+118551,Canara Robeco ELSS Fund Direct Growth,0.0001,22.7969,0.0001
+121016,Edelweiss Flexi Cap Fund Direct Growth,0.0004,22.643,0.0006
+120841,Kotak Mahindra Liquid Fund Direct Growth,-0.0016,22.4755,0.0079
+120333,Motilal Oswal Large Cap Fund Direct Growth,0.0004,21.5443,0.0006
+120465,Tata Mutual Fund Small Cap Fund Direct Growth,-0.0017,20.2691,0.0104
+121015,Invesco India Small Cap Fund Direct Growth,0.0004,17.983,0.0005
+121002,SBI Mutual Fund Liquid Fund Direct Growth,-0.0004,17.7854,0.0004
+121010,UTI Mutual Fund Liquid Fund Direct Growth,-0.001,16.5158,0.0031
+121019,L&T Mutual Fund Short Duration Fund Direct Growth,0.0002,14.5106,0.0002
+121013,Canara Robeco Large Cap Fund Direct Growth,-0.0002,14.0852,0.0001
+118989,Mirae Asset Short Duration Fund Direct Growth,-0.0,13.5301,0.0
+121011,Tata Mutual Fund Short Duration Fund Direct Growth,-0.0006,12.4807,0.0011
+120712,Quantum Mutual Fund Flexi Cap Fund Direct Growth,-0.0011,11.2679,0.0039
+119092,Axis Mutual Fund ELSS Fund Direct Growth,0.0021,10.3479,0.0136
+119203,Invesco India Short Duration Fund Direct Growth,-0.0009,10.224,0.0027
+121007,Mirae Asset Small Cap Fund Direct Growth,-0.0003,9.9068,0.0003
+120503,ICICI Prudential Small Cap Fund Direct Growth,-0.0006,9.5615,0.0013
+119775,Franklin Templeton Large Cap Fund Direct Growth,0.0004,9.0374,0.0005
+121017,Motilal Oswal ELSS Fund Direct Growth,-0.0003,6.8807,0.0004
+121012,Aditya Birla Balanced Advantage Fund Direct Growth,0.0009,6.5509,0.0029
+121009,Franklin Templeton ELSS Fund Direct Growth,-0.0004,6.4956,0.0005
+120594,DSP Mutual Fund Balanced Advantage Fund Direct Growth,0.0006,6.4324,0.0012
+119644,Sundaram Mid Cap Fund Direct Growth,0.0004,6.2618,0.0005
+121006,Kotak Mahindra Mid Cap Fund Direct Growth,0.0007,6.1886,0.0014
+121004,Nippon India Balanced Advantage Fund Direct Growth,0.0005,5.8651,0.0007
+125497,HDFC Mutual Fund Large Cap Fund Direct Growth,0.0008,4.7714,0.002
+121001,HDFC Mutual Fund ELSS Fund Direct Growth,-0.0005,4.4124,0.001
+121005,Axis Mutual Fund Large Cap Fund Direct Growth,-0.0015,1.6892,0.0083
+120178,PGIM India Liquid Fund Direct Growth,0.001,0.4949,0.0034
+119551,SBI Mutual Fund Mid Cap Fund Direct Growth,0.0005,-0.1582,0.0009
+118712,Edelweiss Balanced Advantage Fund Direct Growth,-0.0008,-0.2497,0.0023
+121003,ICICI Prudential Short Duration Fund Direct Growth,0.002,-7.2555,0.0126
+118825,UTI Mutual Fund Mid Cap Fund Direct Growth,0.0007,-7.7162,0.0015
+118890,L&T Mutual Fund Small Cap Fund Direct Growth,-0.0001,-9.8398,0.0001
+118632,Nippon India Flexi Cap Fund Direct Growth,-0.0005,-18.7393,0.001

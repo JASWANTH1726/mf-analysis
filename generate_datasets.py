@@ -10,18 +10,31 @@ rng = np.random.default_rng(42)
 codes = [125497, 119551, 120503, 118632, 119092, 120841,
          118989, 120594, 119775, 118825, 120465, 119386,
          118551, 120178, 119203, 118712, 120333, 119644,
-         118890, 120712]
+         118890, 120712,
+         # 20 new schemes
+         121001, 121002, 121003, 121004, 121005, 121006,
+         121007, 121008, 121009, 121010, 121011, 121012,
+         121013, 121014, 121015, 121016, 121017, 121018,
+         121019, 121020]
 
 houses = ["HDFC Mutual Fund", "SBI Mutual Fund", "ICICI Prudential",
           "Nippon India", "Axis Mutual Fund", "Kotak Mahindra",
-          "Mirae Asset", "DSP Mutual Fund", "Franklin Templeton", "UTI Mutual Fund"]
+          "Mirae Asset", "DSP Mutual Fund", "Franklin Templeton", "UTI Mutual Fund",
+          "Tata Mutual Fund", "Aditya Birla", "Canara Robeco", "PGIM India",
+          "Invesco India", "Edelweiss", "Motilal Oswal", "Sundaram",
+          "L&T Mutual Fund", "Quantum Mutual Fund"]
 
 managers = [
     "Prashant Jain", "R. Srinivasan", "S. Naren", "Sailesh Raj Bhan",
     "Jinesh Gopani", "Harish Krishnan", "Neelesh Surana", "Apoorva Shah",
     "Anand Radhakrishnan", "Vetri Subramaniam", "Mahesh Patil", "Atul Penkar",
     "Sohini Andani", "Roshi Jain", "Shreyash Devalkar", "Taher Badshah",
-    "Vinay Paharia", "Amit Ganatra", "Chirag Setalvad", "Lalit Kumar"
+    "Vinay Paharia", "Amit Ganatra", "Chirag Setalvad", "Lalit Kumar",
+    "Rupesh Patel", "Anil Shah", "Suresh Kumar", "Meeta Shetty",
+    "Rahul Goswami", "Priya Rajan", "Kiran Deshpande", "Vivek Sharma",
+    "Deepak Mehta", "Anjali Verma", "Rohit Singhania", "Neeraj Kumar",
+    "Swati Kulkarni", "Atul Bhole", "Chandraprakash Padiyar", "Manish Gunwani",
+    "Pankaj Tibrewal", "Ravi Gopalakrishnan", "Saurabh Mukherjea", "Nilesh Shah"
 ]
 
 subcats = ["Large Cap", "Mid Cap", "Small Cap", "Flexi Cap",
@@ -35,16 +48,16 @@ sample       = trading_days[::5][:500]
 # fund_master
 fm = pd.DataFrame({
     "scheme_code":   codes,
-    "scheme_name":   [f"{houses[i%10]} {subcats[i%8]} Fund Direct Growth" for i in range(20)],
-    "fund_house":    [houses[i%10] for i in range(20)],
-    "category":      ["Equity", "Debt", "Hybrid", "Solution Oriented", "Other"] * 4,
-    "sub_category":  [subcats[i%8] for i in range(20)],
-    "risk_grade":    [risk[i%5] for i in range(20)],
-    "scheme_type":   [types[i%3] for i in range(20)],
-    "launch_date":   pd.date_range("2010-01-01", periods=20, freq="180D").strftime("%d-%m-%Y"),
-    "benchmark":     ["Nifty 50", "Nifty 100", "BSE 500", "Nifty Midcap 150", "Nifty Smallcap 250"] * 4,
-    "exit_load_pct": rng.choice([0.0, 0.5, 1.0], size=20),
-    "min_sip":       rng.choice([500, 1000, 5000], size=20),
+    "scheme_name":   [f"{houses[i%20]} {subcats[i%8]} Fund Direct Growth" for i in range(40)],
+    "fund_house":    [houses[i%20] for i in range(40)],
+    "category":      ["Equity", "Debt", "Hybrid", "Solution Oriented", "Other"] * 8,
+    "sub_category":  [subcats[i%8] for i in range(40)],
+    "risk_grade":    [risk[i%5] for i in range(40)],
+    "scheme_type":   [types[i%3] for i in range(40)],
+    "launch_date":   pd.date_range("2010-01-01", periods=40, freq="90D").strftime("%d-%m-%Y"),
+    "benchmark":     ["Nifty 50", "Nifty 100", "BSE 500", "Nifty Midcap 150", "Nifty Smallcap 250"] * 8,
+    "exit_load_pct": rng.choice([0.0, 0.5, 1.0], size=40),
+    "min_sip":       rng.choice([500, 1000, 5000], size=40),
 })
 fm.to_csv(os.path.join(raw, "fund_master.csv"), index=False)
 
@@ -89,13 +102,13 @@ pd.DataFrame(rows).to_csv(os.path.join(raw, "sip_data.csv"), index=False)
 # returns
 pd.DataFrame({
     "scheme_code":      codes,
-    "ret_1m":           rng.normal(1.2, 2.5, 20).round(2),
-    "ret_3m":           rng.normal(3.5, 4.0, 20).round(2),
-    "ret_6m":           rng.normal(7.0, 6.0, 20).round(2),
-    "ret_1y":           rng.normal(14.0, 8.0, 20).round(2),
-    "ret_3y":           rng.normal(12.0, 5.0, 20).round(2),
-    "ret_5y":           rng.normal(13.5, 4.5, 20).round(2),
-    "ret_inception":    rng.normal(15.0, 3.5, 20).round(2),
+    "ret_1m":           rng.normal(1.2, 2.5, 40).round(2),
+    "ret_3m":           rng.normal(3.5, 4.0, 40).round(2),
+    "ret_6m":           rng.normal(7.0, 6.0, 40).round(2),
+    "ret_1y":           rng.normal(14.0, 8.0, 40).round(2),
+    "ret_3y":           rng.normal(12.0, 5.0, 40).round(2),
+    "ret_5y":           rng.normal(13.5, 4.5, 40).round(2),
+    "ret_inception":    rng.normal(15.0, 3.5, 40).round(2),
     "as_of":            "31-12-2024",
 }).to_csv(os.path.join(raw, "returns_data.csv"), index=False)
 
@@ -126,8 +139,8 @@ pd.DataFrame(rows).to_csv(os.path.join(raw, "aum_data.csv"), index=False)
 # expense ratio
 pd.DataFrame({
     "scheme_code":   codes,
-    "direct_ter":    rng.uniform(0.1, 1.0, 20).round(3),
-    "regular_ter":   rng.uniform(0.8, 2.5, 20).round(3),
+    "direct_ter":    rng.uniform(0.1, 1.0, 40).round(3),
+    "regular_ter":   rng.uniform(0.8, 2.5, 40).round(3),
     "effective_date": "01-01-2024",
 }).to_csv(os.path.join(raw, "expense_ratio.csv"), index=False)
 
@@ -135,20 +148,20 @@ pd.DataFrame({
 pd.DataFrame({
     "scheme_code":    codes,
     "manager":        managers,
-    "exp_years":      rng.integers(5, 25, 20),
-    "managing_since": pd.date_range("2015-01-01", periods=20, freq="90D").strftime("%d-%m-%Y"),
-    "qualification":  rng.choice(["MBA", "CFA", "CA", "MBA+CFA"], size=20),
+    "exp_years":      rng.integers(5, 25, 40),
+    "managing_since": pd.date_range("2015-01-01", periods=40, freq="45D").strftime("%d-%m-%Y"),
+    "qualification":  rng.choice(["MBA", "CFA", "CA", "MBA+CFA"], size=40),
 }).to_csv(os.path.join(raw, "fund_manager.csv"), index=False)
 
 # risk metrics
 pd.DataFrame({
     "scheme_code":  codes,
-    "std_dev":      rng.uniform(5, 25, 20).round(3),
-    "beta":         rng.uniform(0.6, 1.4, 20).round(3),
-    "sharpe":       rng.uniform(0.3, 2.5, 20).round(3),
-    "alpha":        rng.uniform(-2, 5, 20).round(3),
-    "r_squared":    rng.uniform(0.7, 0.99, 20).round(3),
-    "sortino":      rng.uniform(0.4, 3.0, 20).round(3),
+    "std_dev":      rng.uniform(5, 25, 40).round(3),
+    "beta":         rng.uniform(0.6, 1.4, 40).round(3),
+    "sharpe":       rng.uniform(0.3, 2.5, 40).round(3),
+    "alpha":        rng.uniform(-2, 5, 40).round(3),
+    "r_squared":    rng.uniform(0.7, 0.99, 40).round(3),
+    "sortino":      rng.uniform(0.4, 3.0, 40).round(3),
     "as_of":        "31-12-2024",
 }).to_csv(os.path.join(raw, "risk_metrics.csv"), index=False)
 
