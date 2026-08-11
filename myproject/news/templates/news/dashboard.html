@@ -1,0 +1,219 @@
+{% extends 'news/base.html' %}
+{% block title %}Dashboard - NewsHub{% endblock %}
+{% block extra_css %}
+<style>
+  .filter-bar { background: white; border-radius: 10px; padding: 20px 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 24px; }
+  .filter-bar h3 { margin-bottom: 16px; color: #1a1a2e; font-size: 1rem; }
+  .filter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; align-items: end; }
+  .filter-grid label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 4px; color: #555; }
+  .filter-grid select, .filter-grid input[type=text], .filter-grid input[type=date] {
+    width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem;
+  }
+  .filter-actions { display: flex; gap: 10px; align-items: center; margin-top: 14px; flex-wrap: wrap; }
+  .save-pref { font-size: 0.88rem; display: flex; align-items: center; gap: 6px; }
+  .section-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #e74c3c; padding-left: 10px; }
+  .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; margin-bottom: 32px; }
+  .news-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.07); transition: transform 0.2s; display: flex; flex-direction: column; }
+  .news-card:hover { transform: translateY(-3px); }
+  .news-card img { width: 100%; height: 180px; object-fit: cover; background: #eee; }
+  .news-card .no-img { height: 180px; background: linear-gradient(135deg, #1a1a2e, #16213e); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; }
+  .news-card .card-body { padding: 14px 16px; flex: 1; display: flex; flex-direction: column; }
+  .news-card .source { font-size: 0.78rem; color: #e74c3c; font-weight: 600; text-transform: uppercase; margin-bottom: 6px; }
+  .news-card h4 { font-size: 0.95rem; line-height: 1.4; margin-bottom: 8px; flex: 1; }
+  .news-card p { font-size: 0.82rem; color: #666; line-height: 1.5; margin-bottom: 10px; }
+  .news-card .meta { font-size: 0.78rem; color: #999; display: flex; justify-content: space-between; }
+  .news-card a.read-more { display: inline-block; margin-top: 10px; color: #1a1a2e; font-size: 0.85rem; font-weight: 600; text-decoration: none; }
+  .news-card a.read-more:hover { text-decoration: underline; }
+  .no-results { text-align: center; color: #999; padding: 40px; font-size: 1rem; }
+  .pref-badge { background: #1a1a2e; color: white; font-size: 0.78rem; padding: 3px 10px; border-radius: 20px; margin-right: 6px; }
+</style>
+{% endblock %}
+{% block content %}
+
+<!-- Saved Preferences Summary -->
+<div style="margin-bottom:14px; display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
+  <span style="font-size:0.85rem; color:#555;">Your Profile:</span>
+  <span class="pref-badge">📍 {{ pref.get_area_display }}</span>
+  <span class="pref-badge">🌐 {{ pref.get_language_display }}</span>
+  <span class="pref-badge">📋 {{ pref.get_edition_display }}</span>
+  {% if active_newspaper %}<span class="pref-badge">📰 {{ active_newspaper }}</span>{% endif %}
+  {% if pref.keywords %}<span class="pref-badge">🔖 {{ pref.keywords }}</span>{% endif %}
+</div>
+
+<!-- Filter Bar -->
+<div class="filter-bar">
+  <h3>🔍 Search & Filter News</h3>
+  <form method="post" id="filterForm">
+    {% csrf_token %}
+    <div class="filter-grid">
+      <div>
+        <label>Language</label>
+        {{ form.language }}
+      </div>
+      <div>
+        <label>Newspaper</label>
+        <select name="newspaper" id="id_newspaper">
+          <option value="">All Newspapers</option>
+          <optgroup label="── English National ──">
+            <option value="times_of_india">Times of India</option>
+            <option value="the_hindu">The Hindu</option>
+            <option value="indian_express">The Indian Express</option>
+            <option value="hindustan_times">Hindustan Times</option>
+            <option value="deccan_herald">Deccan Herald</option>
+            <option value="new_indian_express">The New Indian Express</option>
+            <option value="deccan_chronicle">Deccan Chronicle</option>
+            <option value="business_standard">Business Standard</option>
+            <option value="economic_times">Economic Times</option>
+            <option value="mint">Mint</option>
+            <option value="hans_india">The Hans India</option>
+            <option value="tribune">The Tribune</option>
+            <option value="statesman">The Statesman</option>
+          </optgroup>
+          <optgroup label="── English International ──">
+            <option value="bbc">BBC News</option>
+            <option value="reuters">Reuters</option>
+            <option value="guardian">The Guardian</option>
+            <option value="new_york_times">The New York Times</option>
+            <option value="washington_post">The Washington Post</option>
+            <option value="al_jazeera">Al Jazeera</option>
+            <option value="bloomberg">Bloomberg</option>
+            <option value="cnn">CNN</option>
+          </optgroup>
+          <optgroup label="── Hindi ──">
+            <option value="dainik_jagran">Dainik Jagran</option>
+            <option value="dainik_bhaskar">Dainik Bhaskar</option>
+            <option value="amar_ujala">Amar Ujala</option>
+            <option value="hindustan_hindi">Hindustan (Hindi)</option>
+            <option value="rajasthan_patrika">Rajasthan Patrika</option>
+            <option value="navbharat_times">Navbharat Times</option>
+            <option value="jansatta">Jansatta</option>
+          </optgroup>
+          <optgroup label="── Telugu ──">
+            <option value="eenadu">Eenadu</option>
+            <option value="sakshi">Sakshi</option>
+            <option value="andhrajyothy">Andhra Jyothy</option>
+            <option value="vaartha">Vaartha</option>
+            <option value="namaste_telangana">Namasthe Telangana (NT News)</option>
+            <option value="great_andhra">Great Andhra</option>
+            <option value="telangana_today">Telangana Today</option>
+            <option value="andhra_headlines">Andhra Headlines</option>
+          </optgroup>
+          <optgroup label="── Tamil ──">
+            <option value="daily_thanthi">Dina Thanthi</option>
+            <option value="dinamalar">Dinamalar</option>
+            <option value="dinamani">Dinamani</option>
+            <option value="maalai_malar">Maalai Malar</option>
+          </optgroup>
+          <optgroup label="── Kannada ──">
+            <option value="vijaya_karnataka">Vijaya Karnataka</option>
+            <option value="prajavani">Prajavani</option>
+            <option value="vijayavani">Vijayavani</option>
+            <option value="udayavani">Udayavani</option>
+          </optgroup>
+          <optgroup label="── Malayalam ──">
+            <option value="malayala_manorama">Malayala Manorama</option>
+            <option value="mathrubhumi">Mathrubhumi</option>
+            <option value="deshabhimani">Deshabhimani</option>
+          </optgroup>
+          <optgroup label="── Marathi ──">
+            <option value="lokmat">Lokmat</option>
+            <option value="maharashtra_times">Maharashtra Times</option>
+            <option value="pudhari">Pudhari</option>
+            <option value="sakal">Sakal</option>
+          </optgroup>
+          <optgroup label="── Bengali ──">
+            <option value="anandabazar">Anandabazar Patrika</option>
+            <option value="bartaman">Bartaman Patrika</option>
+            <option value="sangbad_pratidin">Sangbad Pratidin</option>
+            <option value="telegraph_india">The Telegraph India</option>
+          </optgroup>
+          <optgroup label="── Gujarati ──">
+            <option value="gujarat_samachar">Gujarat Samachar</option>
+            <option value="divya_bhaskar">Divya Bhaskar</option>
+            <option value="sandesh">Sandesh</option>
+          </optgroup>
+          <optgroup label="── District / Regional ──">
+            <option value="bangalore_mirror">Bangalore Mirror</option>
+          </optgroup>
+        </select>
+      </div>
+      <div>
+        <label>Edition</label>
+        {{ form.edition }}
+      </div>
+      <div>
+        <label>Area / City</label>
+        {{ form.area }}
+      </div>
+      <div>
+        <label>Date (From)</label>
+        {{ form.date }}
+      </div>
+      <div>
+        <label>Keywords</label>
+        {{ form.keywords }}
+      </div>
+    </div>
+    <div class="filter-actions">
+      <button type="submit" class="btn btn-primary">Search</button>
+      <label class="save-pref">
+        {{ form.save_keywords }} Save as my preferences
+      </label>
+    </div>
+  </form>
+</div>
+
+<!-- Live News Results -->
+<div class="section-title">📡 Live News {% if active_newspaper %}— {{ active_newspaper }}{% endif %}</div>
+{% if articles %}
+<div class="news-grid">
+  {% for article in articles %}
+  <div class="news-card">
+    {% if article.urlToImage %}
+      <img src="{{ article.urlToImage }}" alt="news" loading="lazy">
+    {% else %}
+      <div class="no-img">📰</div>
+    {% endif %}
+    <div class="card-body">
+      <div class="source">{{ article.source.name }}</div>
+      <h4>{{ article.title }}</h4>
+      <p>{{ article.description|default:""|truncatechars:100 }}</p>
+      <div class="meta">
+        <span>{{ article.publishedAt|slice:":10" }}</span>
+        {% if article.author %}<span>{{ article.author|truncatechars:20 }}</span>{% endif %}
+      </div>
+      <a href="{{ article.url }}" target="_blank" class="read-more">Read Full Article →</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="no-results">No articles found. Try different keywords or check your API key.</div>
+{% endif %}
+
+<!-- Recommendations -->
+{% if recommendations %}
+<div class="section-title">⭐ Recommended For You</div>
+<div class="news-grid">
+  {% for article in recommendations %}
+  <div class="news-card">
+    {% if article.urlToImage %}
+      <img src="{{ article.urlToImage }}" alt="news" loading="lazy">
+    {% else %}
+      <div class="no-img">⭐</div>
+    {% endif %}
+    <div class="card-body">
+      <div class="source">{{ article.source.name }}</div>
+      <h4>{{ article.title }}</h4>
+      <p>{{ article.description|default:""|truncatechars:100 }}</p>
+      <div class="meta">
+        <span>{{ article.publishedAt|slice:":10" }}</span>
+      </div>
+      <a href="{{ article.url }}" target="_blank" class="read-more">Read Full Article →</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}
