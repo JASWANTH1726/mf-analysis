@@ -41,6 +41,10 @@ notebooks/
 # Models
 models/*.pkl
 
+# Generated project artifacts
+mf_analysis/bluestock_mf.db
+mf_analysis/data/processed/
+
 # OS
 .DS_Store
 Thumbs.db
