@@ -28,6 +28,10 @@ env/
 # IDE
 .vscode/
 .idea/
+
+# Generated deliverables
+*.pdf
+*.pptx
 *.swp
 
 # MLflow
